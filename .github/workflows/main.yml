@@ -5,21 +5,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Setup Java
+      
+      - name: Setup Java 11
         uses: actions/setup-java@v4
         with:
-          java-version: '17'
+          java-version: '11'
           distribution: 'temurin'
+          
+      - name: Setup Gradle
+        uses: gradle/gradle-build-action@v2
       
-      - name: Rakit APK Paksa
-        run: |
-          # Perintah sakti biar gak rewel soal lisensi
-          yes | sdkmanager --licenses || true
-          gradle assembleDebug --stacktrace
+      - name: Rakit APK
+        run: gradle assembleDebug --stacktrace
           
       - name: Upload Hasil
         uses: actions/upload-artifact@v4
         with:
           name: Ipank-Loader-Sultan
-          path: app/build/outputs/apk/debug/app-debug.apk
+          path: "**/*.apk"
           
