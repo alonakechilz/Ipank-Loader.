@@ -2,22 +2,31 @@ buildscript {
     repositories { google(); mavenCentral() }
     dependencies { classpath 'com.android.tools.build:gradle:4.2.2' }
 }
+
 allprojects {
     repositories { google(); mavenCentral() }
 }
+
 apply plugin: 'com.android.application'
+
 android {
     compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+
     defaultConfig {
         applicationId "com.ipank.loader"
         minSdkVersion 21
         targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
     }
+
+    // MANTRA BIAR ROBOT NEMU FOLDER KAMU
     sourceSets {
         main {
             manifest.srcFile 'app/src/main/AndroidManifest.xml'
             java.srcDirs = ['app/src/main/java']
             res.srcDirs = ['app/src/main/res']
-        }}
+        }
     }
-   }
+}
