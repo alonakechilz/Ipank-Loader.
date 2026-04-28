@@ -1,20 +1,29 @@
 buildscript {
     repositories { google(); mavenCentral() }
-    dependencies { classpath 'com.android.tools.build:gradle:4.1.0' }
+    dependencies { 
+        // Versi ini paling cocok sama robot GitHub sekarang
+        classpath 'com.android.tools.build:gradle:7.0.4' 
+    }
 }
+
 allprojects {
     repositories { google(); mavenCentral() }
 }
+
 apply plugin: 'com.android.application'
+
 android {
-    compileSdkVersion 30
+    // Pakai SDK 31 biar mesinnya gak protes
+    compileSdk 31
     defaultConfig {
         applicationId "com.ipank.loader"
-        minSdkVersion 21
-        targetSdkVersion 30
+        minSdk 21
+        targetSdk 31
         versionCode 1
         versionName "1.0"
     }
+
+    // Mantra biar robot nemu folder kamu
     sourceSets {
         main {
             manifest.srcFile 'app/src/main/AndroidManifest.xml'
