@@ -4,17 +4,13 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        // Versi ini yang cocok dengan Gradle 9.x
         classpath 'com.android.tools.build:gradle:8.2.2'
     }
 }
 
-plugins {
-    id 'com.android.application'
-}
+apply plugin: 'com.android.application'
 
 android {
-    // Pakai SDK terbaru biar mesinnya seneng
     compileSdk 34
     namespace 'com.ipank.loader'
 
@@ -26,7 +22,6 @@ android {
         versionName "1.0"
     }
 
-    // Mantra penunjuk jalan folder
     sourceSets {
         main {
             manifest.srcFile 'app/src/main/AndroidManifest.xml'
@@ -34,4 +29,9 @@ android {
             res.srcDirs = ['app/src/main/res']
         }
     }
+}
+
+repositories {
+    google()
+    mavenCentral()
 }
