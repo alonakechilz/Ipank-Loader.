@@ -1,19 +1,29 @@
 buildscript {
     repositories { google(); mavenCentral() }
-    dependencies { classpath 'com.android.tools.build:gradle:4.2.2' }
+    dependencies { 
+        // Update ke versi yang cocok dengan Java 17
+        classpath 'com.android.tools.build:gradle:7.0.4' 
+    }
 }
+
 allprojects {
     repositories { google(); mavenCentral() }
 }
+
 apply plugin: 'com.android.application'
+
 android {
-    compileSdkVersion 30
+    // Pakai SDK terbaru yang didukung GitHub
+    compileSdk 31
     defaultConfig {
         applicationId "com.ipank.loader"
-        minSdkVersion 21
-        targetSdkVersion 30
+        minSdk 21
+        targetSdk 31
+        versionCode 1
+        versionName "1.0"
     }
-    // MANTRA BIAR ROBOT NEMU FOLDER KAMU
+
+    // Mantra penunjuk folder agar tidak nyasar
     sourceSets {
         main {
             manifest.srcFile 'app/src/main/AndroidManifest.xml'
