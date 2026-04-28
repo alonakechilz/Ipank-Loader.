@@ -13,7 +13,7 @@ jobs:
       - name: Rakit APK Paksa
         run: gradle assembleDebug
       - name: Upload Hasil
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: Ipank-Loader-Sultan
           path: app/build/outputs/apk/debug/app-debug.apk
