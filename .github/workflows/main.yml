@@ -5,19 +5,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      
       - name: Setup Java 11
         uses: actions/setup-java@v4
         with:
-          java-version: '26'
+          java-version: '11'
           distribution: 'temurin'
-          
-      - name: Setup Gradle
-        uses: gradle/gradle-build-action@v2
-      
       - name: Rakit APK
-        run: gradle assembleDebug --stacktrace
-          
+        run: |
+          chmod +x gradlew || true
+          gradle assembleDebug --stacktrace
       - name: Upload Hasil
         uses: actions/upload-artifact@v4
         with:
