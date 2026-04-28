@@ -14,7 +14,7 @@ jobs:
       - name: Jebol Lisensi & Rakit
         run: |
           # Ambil alat rakit versi stabil
-          gradle wrapper --gradle-version 6.7.1
+          gradle wrapper --gradle-version 7.3.3
           chmod +x gradlew
           # Terima semua lisensi Google secara paksa
           yes | sdkmanager --licenses || true
