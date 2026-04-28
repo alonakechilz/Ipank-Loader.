@@ -1,27 +1,18 @@
-name: Build APK Ipank Hardcore
+name: Build APK Ipank
 on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Setup Java 17
+      - name: Setup Java 11
         uses: actions/setup-java@v4
         with:
-          java-version: '17'
+          java-version: '11'
           distribution: 'temurin'
-
-      - name: Jebol Lisensi & Rakit
-        run: |
-          # Ambil alat rakit versi stabil
-          gradle wrapper --gradle-version 7.3.3
-          chmod +x gradlew
-          # Terima semua lisensi Google secara paksa
-          yes | sdkmanager --licenses || true
-          # Rakit APK sekarang juga!
-          ./gradlew assembleDebug --stacktrace
-
-      - name: Ambil Hasil APK
+      - name: Rakit APK Paksa
+        run: gradle assembleDebug
+      - name: Upload Hasil
         uses: actions/upload-artifact@v4
         with:
           name: Ipank-Loader-Sultan
