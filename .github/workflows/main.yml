@@ -5,14 +5,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: set up JDK 11
+      - name: Setup Java
         uses: actions/setup-java@v3
         with:
           java-version: '11'
           distribution: 'temurin'
-      - name: Build with Gradle
-        run: gradle assembleDebug
-      - name: Upload APK
+      
+      - name: Pasang Alat Rakit (Gradle)
+        run: |
+          gradle wrapper
+          chmod +x gradlew
+          
+      - name: Proses Cetak APK
+        run: ./gradlew assembleDebug
+        
+      - name: Upload Hasil APK
         uses: actions/upload-artifact@v3
         with:
           name: Ipank-Loader-Sultan
