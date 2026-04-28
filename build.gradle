@@ -1,6 +1,6 @@
 buildscript {
     repositories { google(); mavenCentral() }
-    dependencies { classpath 'com.android.tools.build:gradle:4.2.2' }
+    dependencies { classpath 'com.android.tools.build:gradle:4.1.0' }
 }
 allprojects {
     repositories { google(); mavenCentral() }
@@ -12,6 +12,8 @@ android {
         applicationId "com.ipank.loader"
         minSdkVersion 21
         targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
     }
     sourceSets {
         main {
