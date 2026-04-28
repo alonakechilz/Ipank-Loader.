@@ -1,0 +1,16 @@
+buildscript {
+    repositories { google(); mavenCentral() }
+    dependencies { classpath 'com.android.tools.build:gradle:7.0.4' }
+}
+plugins { id 'com.android.application' }
+android {
+    compileSdk 31
+    defaultConfig {
+        applicationId "com.ipank.loader"
+        minSdk 21
+        targetSdk 31
+        versionCode 1
+        versionName "1.0"
+    }
+}
+repositories { google(); mavenCentral() }
