@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://android.com"
-    package="com.ipank.loader">
-
+<manifest xmlns:android="http://android.com">
     <application
         android:label="Ipank Loader"
         android:icon="@android:drawable/sym_def_app_icon">
-        
         <activity 
             android:name=".MainActivity"
             android:exported="true">
@@ -14,6 +11,5 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        
     </application>
 </manifest>
