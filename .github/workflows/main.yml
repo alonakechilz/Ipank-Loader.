@@ -10,9 +10,9 @@ jobs:
         with:
           java-version: '11'
           distribution: 'temurin'
-      - name: Rakit APK
+      - name: Cari dan Rakit APK Paksa
         run: |
-          chmod +x gradlew || true
+          # Cari dimana file gradle berada dan hajar rakit!
           gradle assembleDebug --stacktrace
       - name: Upload Hasil
         uses: actions/upload-artifact@v4
