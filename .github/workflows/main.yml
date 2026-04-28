@@ -10,11 +10,13 @@ jobs:
         with:
           java-version: '11'
           distribution: 'temurin'
-      - name: Cari dan Rakit APK Paksa
+      
+      - name: Rakit APK Sekarang
         run: |
-          # Cari dimana file gradle berada dan hajar rakit!
+          # Perintah sakti buat maksa ngerakit
           gradle assembleDebug --stacktrace
-      - name: Upload Hasil
+          
+      - name: Ambil Hasil APK
         uses: actions/upload-artifact@v4
         with:
           name: Ipank-Loader-Sultan
