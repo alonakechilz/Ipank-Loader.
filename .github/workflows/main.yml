@@ -14,7 +14,7 @@ jobs:
 
       - name: Bikin Kunci Pas (Gradle Wrapper)
         run: |
-          gradle wrapper --gradle-version 7.3.3
+          gradle wrapper --gradle-version 6.7.1
           chmod +x gradlew
 
       - name: Rakit APK Sekarang
