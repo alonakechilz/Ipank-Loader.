@@ -11,8 +11,6 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 30
-    buildToolsVersion "30.0.3"
-
     defaultConfig {
         applicationId "com.ipank.loader"
         minSdkVersion 21
@@ -21,7 +19,7 @@ android {
         versionName "1.0"
     }
 
-    // MANTRA BIAR ROBOT NEMU FOLDER KAMU
+    // Mantra biar robot nemu folder kamu tanpa alasan!
     sourceSets {
         main {
             manifest.srcFile 'app/src/main/AndroidManifest.xml'
